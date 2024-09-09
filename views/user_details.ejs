@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <link rel="stylesheet" href="/static/details.css" />
+  </head>
+  <body>
+    <%-include('nav')-%>
+    <main>
+      <h2>User Details</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body">
+          <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.number %></td>
+            <td><%= user.email %></td>
+            <td><%= user.dobString %></td>
+            <td><button>Delete</button></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+    <script src="/static/user_details.js"></script>
+  </body>
+</html>

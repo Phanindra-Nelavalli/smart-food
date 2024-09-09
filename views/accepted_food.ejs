@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accepted Food</title>
+    <link rel="stylesheet" href="/static/details.css">
+</head>
+<body>
+    <%-include('nav')-%>
+    <main>
+        <h2>Accepted Food</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Name</th>
+                    <th>Quantity</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row -->
+                <tr>
+                    <td>Apples</td>
+                    <td>10 kg</td>
+                    <td>2024-08-01</td>
+                    <td>Accepted</td>
+                    <td><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food</title>
+    <link rel="stylesheet" href="/static/Registration.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li class="dropdown">
+                Donor
+                <ul class="dropdown-content">
+                    <li><a href="register_donor.html">Add Donor</a></li>
+                    <li><a href="donor_details.html">Donor Details</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                User
+                <ul class="dropdown-content">
+                    <li><a href="register_user.html">Add User</a></li>
+                    <li><a href="user_details.html">User Details</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                Volunteer
+                <ul class="dropdown-content">
+                    <li><a href="register_volunteer.html">Add Volunteer</a></li>
+                    <li><a href="volunteer_details.html">Volunteer Details</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                Listed Foods
+                <ul class="dropdown-content">
+                    <li><a href="listed_foods.html">Add Food</a></li>
+                    <li><a href="accepted_food.html">Accepted Food</a></li>
+                    <li><a href="rejected_food.html">Rejected Food</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                Waste Food Management
+                <ul class="dropdown-content">
+                    <li><a href="feed_animal.html">Feed Animal</a></li>
+                    <li><a href="industrial_use.html">Industrial Use</a></li>
+                    <li><a href="composting.html">Composting</a></li>
+                    <li><a href="landfill.html">Landfill</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Add Food</h2>
+        <form>
+            <label for="food-name">Food Name:</label>
+            <input type="text" id="food-name" name="food-name"><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity"><br>
+            <label for="expiry">Expiry Date:</label>
+            <input type="date" id="expiry" name="expiry"><br>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
+            </select><br>
+            <button type="submit">Add Food</button>
+        </form>
+    </main>
+</body>
+</html>

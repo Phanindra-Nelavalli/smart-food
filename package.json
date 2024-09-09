@@ -1,0 +1,26 @@
+{
+  "name": "smart_food_management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "firebase": "^10.12.5",
+    "firebase-admin": "^12.3.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "react": "^18.3.1",
+    "uuid": "^10.0.0"
+  }
+}

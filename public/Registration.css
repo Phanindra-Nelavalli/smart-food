@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+nav {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+nav ul li:hover {
+  background-color: #575757;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+nav ul li ul {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li ul li {
+  padding: 10px 20px;
+  background-color: #444;
+}
+nav ul li:hover > ul {
+  display: block;
+}
+main {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+}
+h2 {
+  color: #333;
+}
+form {
+  display: inline-block;
+  text-align: left;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+input,
+select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+select {
+  font-size: 18px;
+}
+input[type="date"] {
+  font-size: 15px;
+  text-emphasis: none;
+}
+form button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  margin-top: 14px;
+  font-size: 17px;
+  float: right;
+}
+form button:hover {
+  background-color: #218838;
+}
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: none;
+}

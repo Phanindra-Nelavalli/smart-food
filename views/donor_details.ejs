@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Details</title>
+    <link rel="stylesheet" href="/static/details.css" />
+  </head>
+  <body>
+    <%-include('nav')-%>
+    <main>
+      <h2>Donor Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body">
+          <% donors.forEach(donor => { %>
+          <tr>
+            <td><%= donor.name %></td>
+            <td><%= donor.number %></td>
+            <td><%= donor.email %></td>
+            <td><%= donor.dobString %></td>
+            <td><button>Delete</button></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
