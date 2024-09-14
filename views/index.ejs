@@ -1,7 +1,115 @@
-<%-include('header')-%>
-<%-include('nav')-%>
+<%-include('header')-%> <%-include('nav')-%>
 <main>
-    <h1>Welcome to Smart Food Waste Management</h1>
-    <p>Please use the navigation menu to explore various options and features of our application.</p>
+  <!-- Home Page Content -->
+  <div class="category-container">
+    <h3>Categories</h3>
+    <div class="category-grid">
+      <div>
+        <h3>Donor</h3>
+        <p><a href="/register_donor">Add Donor</a></p>
+        <p><a href="/donor_details">Donor Details</a></p>
+      </div>
+      <div>
+        <h3>User</h3>
+        <p><a href="/register_user">Add User</a></p>
+        <p><a href="/user_details">User Details</a></p>
+      </div>
+      <div>
+        <h3>Volunteer</h3>
+        <p><a href="/register_volunteer">Add Volunteer</a></p>
+        <p><a href="/volunteer_details">Volunteer Details</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-container">
+    <div class="category-grid">
+      <div>
+        <h3>Listed Foods</h3>
+        <p><a href="/listed_foods">Add Food</a></p>
+        <p><a href="/accepted_food">Accepted Food</a></p>
+        <p><a href="/rejected_food">Rejected Food</a></p>
+      </div>
+      <div>
+        <h3>Waste Food Management</h3>
+        <p><a href="/feed_animal">Feed Animal</a></p>
+        <p><a href="/industrial_use">Industrial Use</a></p>
+        <p><a href="/composting">Composting</a></p>
+        <p><a href="/landfill">Landfill</a></p>
+      </div>
+    </div>
+  </div>
 </main>
+
+<!-- About Page Content -->
+<div class="section" id="about">
+  <h2>About Us</h2>
+  <p>
+    Smart Food Waste Management is committed to reducing food waste and
+    addressing hunger through our innovative platform. Our mission is to connect
+    donors, users, and volunteers in a seamless ecosystem that ensures surplus
+    food is effectively redistributed to those in need.
+  </p>
+  <div class="about-content">
+    <div class="about-item">
+      <i class="fas fa-truck"></i>
+      <h3>Food Collection</h3>
+      <p>
+        We collect surplus food from various sources, including restaurants,
+        cafes, and grocery stores. Our efficient logistics ensure that food is
+        collected promptly and safely.
+      </p>
+    </div>
+    <div class="about-item">
+      <i class="fas fa-hand-holding-heart"></i>
+      <h3>Distribution to Needy</h3>
+      <p>
+        The collected food is distributed to charitable organizations, shelters,
+        and community centers that serve individuals and families in need. Our
+        goal is to reduce food insecurity and promote community well-being.
+      </p>
+    </div>
+    <div class="about-item">
+      <i class="fas fa-recycle"></i>
+      <h3>Waste Reduction</h3>
+      <p>
+        By redistributing surplus food, we contribute to reducing waste and
+        minimizing the environmental impact of food disposal. Our efforts
+        support a more sustainable and responsible approach to food management.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us Page Content -->
+<div class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    If you have any questions or need assistance, please feel free to reach out
+    to us at:
+  </p>
+  <p>
+    Email:
+    <a href="mailto:support@smartfoodwaste.com">support@smartfoodwaste.com</a>
+  </p>
+  <p>Phone: +1 (123) 456-7890</p>
+  <p>Address: 123 Food Waste St, Green City, USA</p>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"
+      ><i class="fab fa-linkedin"></i
+    ></a>
+    <a href="https://www.google.com" target="_blank" title="Google"
+      ><i class="fab fa-google"></i
+    ></a>
+    <a href="https://twitter.com" target="_blank" title="Twitter"
+      ><i class="fab fa-twitter"></i
+    ></a>
+    <a href="https://www.facebook.com" target="_blank" title="Facebook"
+      ><i class="fab fa-facebook-f"></i
+    ></a>
+    <a href="https://www.instagram.com" target="_blank" title="Instagram"
+      ><i class="fab fa-instagram"></i
+    ></a>
+  </div>
+</div>
 <%-include('footer')-%>

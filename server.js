@@ -79,12 +79,44 @@ app.get("/volunteer_details", async function (req, res) {
   res.render("volunteer_details", { volunteers: volunteers });
 });
 
-app.get("/accepted_food", function (req, res) {
-  res.render("accepted_food");
+app.get("/accepted_food", async function (req, res) {
+  const acceptedFoodSnapshot = await db.collection("Food").get();
+  const acceptedFood = [];
+
+  acceptedFoodSnapshot.forEach((doc) => {
+    let foodData = doc.data();
+
+    if (foodData.expiry && foodData.expiry._seconds) {
+      const expiryDate = new Date(foodData.expiry._seconds * 1000);
+      foodData.expiryString = expiryDate.toISOString().split("T")[0];
+    }
+
+    if (foodData.status == "accepted") {
+      acceptedFood.push(foodData);
+    }
+  });
+
+  res.render("accepted_food", { acceptedFood: acceptedFood });
 });
 
-app.get("/rejected_food", function (req, res) {
-  res.render("rejected_food");
+app.get("/rejected_food", async function (req, res) {
+  const rejectedFoodSnapshot = await db.collection("Food").get();
+  const rejectedFood = [];
+
+  rejectedFoodSnapshot.forEach((doc) => {
+    let foodData = doc.data();
+
+    if (foodData.expiry && foodData.expiry._seconds) {
+      const expiryDate = new Date(foodData.expiry._seconds * 1000);
+      foodData.expiryString = expiryDate.toISOString().split("T")[0];
+    }
+
+    if (foodData.status == "rejected") {
+      rejectedFood.push(foodData);
+    }
+  });
+
+  res.render("rejected_food", { rejectedFood: rejectedFood });
 });
 
 app.get("/register_donor", function (req, res) {
@@ -101,6 +133,10 @@ app.get("/register_volunteer", function (req, res) {
 
 app.get("/login", function (req, res) {
   res.render("login");
+});
+
+app.get("/success", function (req, res) {
+  res.render("success");
 });
 
 app.get("/composting", function (req, res) {

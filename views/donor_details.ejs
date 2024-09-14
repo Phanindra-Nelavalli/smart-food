@@ -10,28 +10,22 @@
     <%-include('nav')-%>
     <main>
       <h2>Donor Details</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Date of Birth</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="user-table-body">
-          <% donors.forEach(donor => { %>
-          <tr>
-            <td><%= donor.name %></td>
-            <td><%= donor.number %></td>
-            <td><%= donor.email %></td>
-            <td><%= donor.dobString %></td>
-            <td><button>Delete</button></td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+
+      <div class="card-container">
+        <% donors.forEach(donor => { %>
+        <div class="card">
+          <img
+            src="https://via.placeholder.com/100"
+            alt="<%= donor.name %>"
+            class="profile-pic"
+          />
+          <div class="name"><%= donor.name %></div>
+          <div class="details">Phone Number: <%= donor.number %></div>
+          <div class="details">Email: <%= donor.email %></div>
+          <div class="details">Date of Birth: <%= donor.dobString %></div>
+        </div>
+        <% }) %>
+      </div>
     </main>
   </body>
 </html>

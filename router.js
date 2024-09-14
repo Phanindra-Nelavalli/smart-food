@@ -91,7 +91,6 @@ router.post("/volunteer_reg", async (req, res) => {
     const userRef = db.collection("Volunteers").doc(email);
     const resp1 = await userRef.get();
     const number = parseInt(phone, 10);
-    
 
     if (resp1.exists) {
       return res.status(401).send("Account Already Exists");
@@ -131,11 +130,31 @@ router.post("/login", async (req, res) => {
       const userData = resp.data();
       if (password === userData.password) {
         const userName = userData.name;
-        res.render("volunteer_details");
+        res.render("index", { title: "Login System" });
       } else {
         return res.status(401).send("Invalid password");
       }
     }
+  } catch (error) {
+    console.error("Error in login route:", error);
+    return res.status(500).send("Internal Server Error");
+  }
+});
+
+router.post("/add_food", async (req, res) => {
+  try {
+    const { foodName, quantity, expiry, status } = req.body;
+    const userRef = db.collection("Food");
+    const count = parseInt(quantity, 10);
+    const expirydate = new Date(expiry);
+
+    await userRef.add({
+      foodname: foodName,
+      quantity: count,
+      expiry: expirydate,
+      status: status,
+    });
+    res.render("success");
   } catch (error) {
     console.error("Error in login route:", error);
     return res.status(500).send("Internal Server Error");

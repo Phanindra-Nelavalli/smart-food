@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register Volunteer</title>
-    <link rel="stylesheet" href="/static/Registration.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/static/Registration.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  </head>
+  <body>
     <%-include('nav')-%>
     <main>
-        <h2>Register as Volunteer</h2>
-        <form action="/route/volunteer_reg" method="post">
+      <!-- Heading outside the card -->
+      <h2>Volunteer Registration</h2>
+
+      <!-- Card container with 50% form and 50% Lottie -->
+      <div class="card-container">
+        <!-- Form section -->
+        <div class="form-section">
+          <form action="/route/volunteer_reg" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name" /><br />
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone"><br>
+            <input type="tel" id="phone" name="phone" /><br />
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br>
+            <input type="email" id="email" name="email" /><br />
             <label for="address">Address:</label>
-            <input type="text" id="address" name="address"><br>
+            <input type="text" id="address" name="address" /><br />
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br>
+            <input type="password" id="password" name="password" /><br />
             <button type="submit">Register</button>
-        </form>
+          </form>
+        </div>
+
+        <!-- Lottie animation section -->
+        <div class="lottie-container">
+          <div id="lottie-animation"></div>
+        </div>
+      </div>
     </main>
-</body>
+    <script>
+      var animation = lottie.loadAnimation({
+        container: document.getElementById("lottie-animation"), // The container where animation will render
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://lottie.host/b35de59d-cccf-4dd3-b9d5-95b4b5001e1b/jSpX9Fd5pN.json", // URL to the Lottie animation file
+      });
+    </script>
+  </body>
 </html>

@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accepted Food</title>
-    <link rel="stylesheet" href="/static/details.css">
-</head>
-<body>
-    <%-include('nav')-%>
+    <link rel="stylesheet" href="/static/details.css" />
+  </head>
+  <body>
+    <%- include('nav') %>
     <main>
-        <h2>Accepted Food</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Food Name</th>
-                    <th>Quantity</th>
-                    <th>Expiry Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example row -->
-                <tr>
-                    <td>Apples</td>
-                    <td>10 kg</td>
-                    <td>2024-08-01</td>
-                    <td>Accepted</td>
-                    <td><button>Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+      <h2>User Details</h2>
+
+      <div class="card-container">
+        <% acceptedFood.forEach(food => { %>
+        <div class="card">
+          <div class="name"><%= food.foodname %></div>
+          <div class="details">Quantity: <%= food.quantity  %></div>
+          <div class="details">Expiry Date: <%= food.expiryString  %></div>
+          <div class="details" style="color: green; font-size: large;">Status: Accepted</div>
+        </div>
+        <% }) %>
+      </div>
     </main>
-</body>
+  </body>
 </html>

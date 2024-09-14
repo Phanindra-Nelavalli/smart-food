@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landfill</title>
-    <link rel="stylesheet" href="/static/WasteFoodManagement.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/static/WasteFoodManagement.css" />
+  </head>
+  <body>
     <%-include('nav')-%>
     <main>
-        <h2>Landfill</h2>
-        <form>
+      <h2>Landfill</h2>
+      <div class="card-container">
+        <div class="form-section">
+          <form>
             <label for="landfill-name">Landfill Name</label>
-            <input type="text" id="landfill-name" name="landfill-name" required>
+            <input
+              type="text"
+              id="landfill-name"
+              name="landfill-name"
+              required
+            />
 
             <label for="contact-person">Contact Person</label>
-            <input type="text" id="contact-person" name="contact-person" required>
+            <input
+              type="text"
+              id="contact-person"
+              name="contact-person"
+              required
+            />
 
             <label for="contact-email">Contact Email</label>
-            <input type="email" id="contact-email" name="contact-email" required>
+            <input
+              type="email"
+              id="contact-email"
+              name="contact-email"
+              required
+            />
 
             <label for="contact-phone">Contact Phone</label>
-            <input type="text" id="contact-phone" name="contact-phone" required>
+            <input
+              type="text"
+              id="contact-phone"
+              name="contact-phone"
+              required
+            />
 
             <label for="landfill-details">Landfill Details</label>
-            <input type="text" id="landfill-details" name="landfill-details" required>
+            <input
+              type="text"
+              id="landfill-details"
+              name="landfill-details"
+              required
+            />
 
             <button type="submit">Submit</button>
-        </form>
+          </form>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

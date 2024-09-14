@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Food Waste Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      nav {
+        width: 100%;
+        background-color: #2c3e50;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 20px;
+      }
+      nav h1 {
+        font-size: 1.5em;
+        margin: 0;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        margin: 0;
+      }
+      nav ul li {
+        margin-right: 20px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1em;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: #16a085;
+      }
+      nav .btn-get-started {
+        background-color: #e67e22;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: background-color 0.3s;
+      }
+      nav .btn-get-started:hover {
+        background-color: #d35400;
+      }
+      main {
+        padding: 20px;
+        margin-top: 80px; /* Offset for fixed navbar */
+      }
+      .category-container {
+        margin-bottom: 20px;
+      }
+      .category-container h3 {
+        margin-top: 0;
+        color: #2c3e50;
+        padding: 10px;
+        background-color: #ecf0f1;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .category-grid > div {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      .category-grid a {
+        color: #2980b9;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s, background-color 0.3s;
+      }
+      .category-grid a:hover {
+        color: #3498db;
+        background-color: #ecf0f1;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .section {
+        padding: 20px;
+        text-align: center;
+      }
+      .section#about {
+        background-color: #bdc3c7;
+        color: #2c3e50;
+      }
+      .section#contact {
+        background-color: #2c3e50;
+        color: white;
+      }
+      .section a {
+        color: #1abc9c;
+        text-decoration: none;
+      }
+      .section a:hover {
+        text-decoration: underline;
+      }
+      .social-icons {
+        margin-top: 10px;
+      }
+      .social-icons a {
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+        font-size: 1.5em;
+        transition: color 0.3s;
+      }
+      .social-icons a:hover {
+        color: #1abc9c;
+      }
+      /* About Section Enhancements */
+      .section#about {
+        background-color: #bdc3c7;
+        color: #2c3e50;
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .about-item {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex: 1 1 calc(33.333% - 20px);
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .about-item i {
+        font-size: 2em;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .about-item h3 {
+        margin: 10px 0;
+        color: #2c3e50;
+      }
+
+      .about-item p {
+        color: #34495e;
+      }
+
+      @media (max-width: 768px) {
+        .about-item {
+          flex: 1 1 calc(50% - 20px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .about-item {
+          flex: 1 1 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>Smart Food Waste Management</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="/get_started" class="btn-get-started">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Home Page Content -->
+      <div class="category-container">
+        <h3>Categories</h3>
+        <div class="category-grid">
+          <div>
+            <h3>Donor</h3>
+            <p><a href="/register_donor">Add Donor</a></p>
+            <p><a href="/donor_details">Donor Details</a></p>
+          </div>
+          <div>
+            <h3>User</h3>
+            <p><a href="/register_user">Add User</a></p>
+            <p><a href="/user_details">User Details</a></p>
+          </div>
+          <div>
+            <h3>Volunteer</h3>
+            <p><a href="/register_volunteer">Add Volunteer</a></p>
+            <p><a href="/volunteer_details">Volunteer Details</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-container">
+        <div class="category-grid">
+          <div>
+            <h3>Listed Foods</h3>
+            <p><a href="/listed_foods">Add Food</a></p>
+            <p><a href="/accepted_food">Accepted Food</a></p>
+            <p><a href="/rejected_food">Rejected Food</a></p>
+          </div>
+          <div>
+            <h3>Waste Food Management</h3>
+            <p><a href="/feed_animal">Feed Animal</a></p>
+            <p><a href="/industrial_use">Industrial Use</a></p>
+            <p><a href="/composting">Composting</a></p>
+            <p><a href="/landfill">Landfill</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- About Page Content -->
+    <div class="section" id="about">
+      <h2>About Us</h2>
+      <p>
+        Smart Food Waste Management is committed to reducing food waste and
+        addressing hunger through our innovative platform. Our mission is to
+        connect donors, users, and volunteers in a seamless ecosystem that
+        ensures surplus food is effectively redistributed to those in need.
+      </p>
+      <div class="about-content">
+        <div class="about-item">
+          <i class="fas fa-truck"></i>
+          <h3>Food Collection</h3>
+          <p>
+            We collect surplus food from various sources, including restaurants,
+            cafes, and grocery stores. Our efficient logistics ensure that food
+            is collected promptly and safely.
+          </p>
+        </div>
+        <div class="about-item">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Distribution to Needy</h3>
+          <p>
+            The collected food is distributed to charitable organizations,
+            shelters, and community centers that serve individuals and families
+            in need. Our goal is to reduce food insecurity and promote community
+            well-being.
+          </p>
+        </div>
+        <div class="about-item">
+          <i class="fas fa-recycle"></i>
+          <h3>Waste Reduction</h3>
+          <p>
+            By redistributing surplus food, we contribute to reducing waste and
+            minimizing the environmental impact of food disposal. Our efforts
+            support a more sustainable and responsible approach to food
+            management.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us Page Content -->
+    <div class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions or need assistance, please feel free to reach
+        out to us at:
+      </p>
+      <p>
+        Email:
+        <a href="mailto:support@smartfoodwaste.com"
+          >support@smartfoodwaste.com</a
+        >
+      </p>
+      <p>Phone: +1 (123) 456-7890</p>
+      <p>Address: 123 Food Waste St, Green City, USA</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://www.google.com" target="_blank" title="Google"
+          ><i class="fab fa-google"></i
+        ></a>
+        <a href="https://twitter.com" target="_blank" title="Twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+  </body>
+</html>

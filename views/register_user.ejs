@@ -5,28 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register User</title>
     <link rel="stylesheet" href="/static/Registration.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   </head>
   <body>
     <%- include('nav') %>
     <main>
-      <h2>Register as User</h2>
-      <form id="registrationForm" action="/route/user_reg" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" /><br />
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" /><br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" /><br />
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" /><br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" /><br />
-        <label for="confirmpass">Confirm Password:</label>
-        <input type="password" id="confirmpass" name="confirmpass" /><br />
-        <div id="error-message" class="error">Passwords do not match</div>
-        <button type="submit">Register</button>
-      </form>
+      <h2>User Registration</h2>
+      <div class="card-container">
+        <div class="form-section">
+          <form id="registrationForm" action="/route/user_reg" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required /><br />
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required /><br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required /><br />
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required /><br />
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+            /><br />
+            <label for="confirmpass">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmpass"
+              name="confirmpass"
+              required
+            /><br />
+            <div id="error-message" class="error">Passwords do not match</div>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+
+        <!-- Lottie animation section -->
+        <div class="lottie-container">
+          <div id="lottie-animation"></div>
+        </div>
+      </div>
     </main>
     <script src="/static/Pass_check.js"></script>
+    <script>
+      var animation = lottie.loadAnimation({
+        container: document.getElementById("lottie-animation"), // The container where animation will render
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://lottie.host/b35de59d-cccf-4dd3-b9d5-95b4b5001e1b/jSpX9Fd5pN.json", // URL to the Lottie animation file
+      });
+    </script>
   </body>
 </html>
